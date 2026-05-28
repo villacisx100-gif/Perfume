@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Parfum · Perfumes en Barra</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Hoja de estilos externa -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       BARRA DE NAVEGACIÓN
+  ════════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-brand" onclick="showSection('home')">AURA PARFUM</div>
+    <div class="nav-links">
+      <a onclick="showSection('home')">Inicio</a>
+      <a onclick="showSection('products')">Productos</a>
+      <a onclick="showSection('gallery')">Galería</a>
+      <a onclick="showSection('contact')">Contacto</a>
+      <a class="admin-link" onclick="showSection('admin')">⚙ Admin</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       SECCIÓN: INICIO (HOME)
+  ════════════════════════════════════════ -->
+  <div id="section-home" class="section active">
+
+    <!-- Hero Banner -->
+    <div class="hero">
+      <div class="hero-inner">
+        <div class="hero-tag">Perfumes en Barra Artesanales</div>
+        <h1>AURA<br /><em>Parfum</em></h1>
+        <p>Fragancias naturales en formato barra.<br />Elaboradas a mano para quienes aprecian lo auténtico.</p>
+        <button class="hero-btn" onclick="showSection('products')">Explorar colección</button>
+      </div>
+    </div>
+
+    <!-- Pilares / Valores -->
+    <div class="pillars">
+      <div class="pillar">
+        <span class="pillar-icon">🌿</span>
+        <div class="pillar-title">100% Natural</div>
+        <div class="pillar-desc">Ingredientes naturales, libres de químicos dañinos</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">✨</span>
+        <div class="pillar-title">Artesanal</div>
+        <div class="pillar-desc">Elaborado a mano con dedicación y amor</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">🚀</span>
+        <div class="pillar-title">Práctico</div>
+        <div class="pillar-desc">Formato barra, fácil de llevar a todos lados</div>
+      </div>
+    </div>
+
+    <!-- Productos Destacados -->
+    <div class="home-featured">
+      <div class="home-section-title">Destacados</div>
+      <div class="home-section-sub">Nuestras fragancias más queridas</div>
+      <div id="featured-grid" class="product-grid"></div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SECCIÓN: PRODUCTOS
+  ════════════════════════════════════════ -->
+  <div id="section-products" class="section">
+    <div class="page">
+      <div class="page-title">Nuestra Colección</div>
+      <div class="page-sub">Perfumes en barra artesanales para cada momento y personalidad</div>
+      <div id="products-grid" class="product-grid"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SECCIÓN: GALERÍA
+  ════════════════════════════════════════ -->
+  <div id="section-gallery" class="section">
+    <div class="page">
+      <div class="page-title">Galería</div>
+      <div class="page-sub">Momentos, detalles y la esencia de Aura Parfum</div>
+      <div id="gallery-display" class="gallery-grid"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SECCIÓN: CONTACTO
+  ════════════════════════════════════════ -->
+  <div id="section-contact" class="section">
+    <div class="page">
+      <div class="page-title">Contacto</div>
+      <div class="page-sub">Estamos aquí para ti, escríbenos cuando quieras</div>
+      <div class="contact-layout">
+
+        <!-- Info de contacto -->
+        <div class="contact-card">
+          <h3>Encuéntranos</h3>
+          <div class="contact-row">
+            <div class="contact-icon">📱</div>
+            <span id="disp-whatsapp">+593 99 000 0000</span>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">✉️</div>
+            <span id="disp-email">hola@auraparfum.com</span>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">📸</div>
+            <span id="disp-instagram">@auraparfum</span>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">📍</div>
+            <span id="disp-city">Riobamba, Ecuador</span>
+          </div>
+        </div>
+
+        <!-- Formulario de mensaje -->
+        <div class="contact-card">
+          <h3>Envíanos un mensaje</h3>
+          <div class="msg-form">
+            <input type="text" id="msg-name" placeholder="Tu nombre" />
+            <input type="text" id="msg-contact" placeholder="Tu WhatsApp o correo" />
+            <textarea id="msg-text" placeholder="¿En qué podemos ayudarte?"></textarea>
+            <button class="btn-primary" onclick="sendMessage()">Enviar mensaje</button>
+            <div class="alert-success" id="msg-success">✓ ¡Mensaje recibido! Te responderemos pronto 💕</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SECCIÓN: ADMIN
+  ════════════════════════════════════════ -->
+  <div id="section-admin" class="section">
+    <div class="page">
+      <div class="page-title">Administración</div>
+      <div class="page-sub">Gestiona tu tienda: productos, galería e información de contacto</div>
+
+      <!-- Formulario: Agregar Producto -->
+      <div class="form-section">
+        <div class="form-header" onclick="toggleForm('pf')">
+          <div class="form-header-left">
+            <span class="form-header-icon">🌸</span> Agregar nuevo producto
+          </div>
+          <span class="toggle-icon" id="pf-icon">▾</span>
+        </div>
+        <div class="form-body hidden" id="pf-body">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Nombre del perfume *</label>
+              <input id="p-name" placeholder="Ej: Rosa Salvaje" />
+            </div>
+            <div class="form-group">
+              <label>Precio (USD) *</label>
+              <input type="number" id="p-price" placeholder="Ej: 8.50" step="0.01" />
+            </div>
+            <div class="form-group full">
+              <label>Descripción</label>
+              <textarea id="p-desc" placeholder="Notas de olor, ingredientes, inspiración..."></textarea>
+            </div>
+            <div class="form-group full">
+              <label>URL de imagen (opcional)</label>
+              <input type="url" id="p-img" placeholder="https://..." />
+            </div>
+            <div class="form-group">
+              <label>Categoría</label>
+              <select id="p-cat">
+                <option>Floral</option>
+                <option>Frutal</option>
+                <option>Amaderado</option>
+                <option>Oriental</option>
+                <option>Fresco</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Disponibilidad</label>
+              <select id="p-stock">
+                <option>Disponible</option>
+                <option>Pocas unidades</option>
+                <option>Agotado</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn-primary" onclick="addProduct()">Guardar producto</button>
+            <div class="alert-success inline" id="product-success">✓ Producto agregado</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario: Subir Galería -->
+      <div class="form-section">
+        <div class="form-header" onclick="toggleForm('gf')">
+          <div class="form-header-left">
+            <span class="form-header-icon">📷</span> Subir fotos a la galería
+          </div>
+          <span class="toggle-icon" id="gf-icon">▾</span>
+        </div>
+        <div class="form-body hidden" id="gf-body">
+          <div class="upload-zone" onclick="document.getElementById('gallery-file-input').click()">
+            <span class="upload-icon">⬆️</span>
+            Haz clic para subir una foto desde tu dispositivo
+            <div class="upload-hint">JPG, PNG · Máx 5MB</div>
+          </div>
+          <input type="file" id="gallery-file-input" accept="image/*" onchange="uploadGalleryImage(event)" />
+          <div class="url-upload">
+            <div class="url-upload-label">O agrega por URL de imagen:</div>
+            <div class="url-upload-row">
+              <input type="url" id="gallery-url" placeholder="https://...imagen.jpg" />
+              <button class="btn-primary" onclick="addGalleryUrl()">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario: Editar Contacto -->
+      <div class="form-section">
+        <div class="form-header" onclick="toggleForm('cf')">
+          <div class="form-header-left">
+            <span class="form-header-icon">📋</span> Editar información de contacto
+          </div>
+          <span class="toggle-icon" id="cf-icon">▾</span>
+        </div>
+        <div class="form-body hidden" id="cf-body">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>WhatsApp</label>
+              <input id="c-whatsapp" placeholder="+593 99 000 0000" />
+            </div>
+            <div class="form-group">
+              <label>Correo electrónico</label>
+              <input type="email" id="c-email" placeholder="hola@auraparfum.com" />
+            </div>
+            <div class="form-group">
+              <label>Instagram</label>
+              <input id="c-instagram" placeholder="@auraparfum" />
+            </div>
+            <div class="form-group">
+              <label>Ciudad</label>
+              <input id="c-city" placeholder="Riobamba, Ecuador" />
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn-primary" onclick="saveContact()">Guardar cambios</button>
+            <div class="alert-success inline" id="contact-success">✓ Información actualizada</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lista de productos en admin -->
+      <div class="admin-list-title">Productos registrados</div>
+      <div id="admin-product-list"></div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer>
+    Aura Parfum · Perfumes en Barra Artesanales · Riobamba, Ecuador
+  </footer>
+
+  <!-- Script JavaScript externo -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>
