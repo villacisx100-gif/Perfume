@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════
-   AURA PARFUM — app.js
+   LITTLE ESSENCES — app.js
    Contiene toda la lógica e interactividad:
    · Navegación entre secciones
    · CRUD de productos
