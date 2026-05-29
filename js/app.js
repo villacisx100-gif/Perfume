@@ -52,8 +52,8 @@ let gallery = [];
 // Información de contacto editable
 let contact = {
   whatsapp:  '+593 99 000 0000',
-  email:     'hola@auraparfum.com',
-  instagram: '@auraparfum',
+  email:     'littleessences@gmail.com',
+  instagram: '@littleessences',
   city:      'Riobamba, Ecuador'
 };
 
