@@ -20,7 +20,7 @@ let products = [
   {
     id: 1,
     name: 'Rosa Salvaje',
-    price: 8.50,
+    price: 3.50,
     desc: 'Notas de rosa, jazmín y almizcle suave. Ideal para el día a día.',
     cat: 'Floral',
     stock: 'Disponible',
@@ -29,7 +29,7 @@ let products = [
   {
     id: 2,
     name: 'Bosque Mágico',
-    price: 9.00,
+    price: 4.00,
     desc: 'Cedro, sándalo y notas verdes frescas. Perfecto para la noche.',
     cat: 'Amaderado',
     stock: 'Disponible',
@@ -38,7 +38,7 @@ let products = [
   {
     id: 3,
     name: 'Fresas del Valle',
-    price: 7.50,
+    price: 3.50,
     desc: 'Fresa, frambuesa y vainilla tierna. Dulce y juvenil.',
     cat: 'Frutal',
     stock: 'Pocas unidades',
